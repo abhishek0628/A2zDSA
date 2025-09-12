@@ -1,19 +1,37 @@
 #include<stdio.h>
-int peek(int arr[],int n)
+// int peek(int arr[],int n)
+// {
+//     int l=0;
+//     int r=n-1;
+//     while(l<r)
+//     {
+//         int mid=l+(r-l)/2;
+//         if(mid==n-1)return mid;
+//         if(mid==0)return mid;
+//         if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])return mid;
+//         if(arr[mid]<arr[mid+1])l=mid+1;
+//         else r=mid-1;
+//     }
+//     return n-1;
+// }
+int peek(int arr[], int n)
 {
-    int l=0;
-    int r=n-1;
-    while(l<r)
+    int l = 0;
+    int r = n - 1;
+
+    while (l < r)
     {
-        int mid=l+(r-l)/2;
-        if(mid==n-1)return mid;
-        if(mid==0)return mid;
-        if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])return mid;
-        if(arr[mid]<arr[mid+1])l=mid+1;
-        else r=mid-1;
+        int mid = l + (r - l) / 2;
+
+        
+        if (arr[mid] < arr[mid + 1])
+            l = mid + 1;
+        else
+            r = mid; 
     }
-    return n-1;
+    return l; 
 }
+
 int main()
 {
     int n;
@@ -23,8 +41,7 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
-    // int x;
-    // scanf("%d",&x);
+    
     printf("%d",peek(arr,n));
     return 0;
 }
