@@ -55,42 +55,7 @@ class tree{
         while(root!=null && root.left!=null)root=root.left;
         return root;
     }
-    // Node inorderpredecessor(Node root,int data)
-    // {
-    //     if(root==null)return null;
-    //     Node p=null;
-    //     Node curr=root;
-    //     while(curr!=null)
-    //     {
-    //         if(curr.data>data)
-    //         {
-    //             // s=curr;
-    //             curr=curr.left;
-    //         }
-    //         else if(curr.data<data)
-    //         {
-    //             p=curr;
-    //             curr=curr.right;
-    //         }
-    //         else{
-    //             if(curr.left!=null){return maximum(curr.left);}
-    //             // break;
-    //         }
-    //         break;
-             
-    //     }
-    //     return p;
-    // }
-
-    // Helper function to find maximum in a subtree
-// Node maximum(Node root) {
-//     Node curr = root;
-//     while (curr != null && curr.right != null) {
-//         curr = curr.right;
-//     }
-//     return curr;
-// }
-
+   
 Node inorderPredecessor(Node root, int data) {
     if (root == null) return null;
 
