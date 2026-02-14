@@ -1,3 +1,6 @@
+// problem statement
+/*Given an array nums consisting of only 0, 1, or 2. Sort the array in non-decreasing order. 
+The sorting must be done in-place, without making a copy of the original array.*/
 #include<stdio.h>
 void sort(int arr[],int n)
 {

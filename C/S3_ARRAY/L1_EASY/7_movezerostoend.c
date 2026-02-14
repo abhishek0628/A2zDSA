@@ -1,14 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int search(int arr[],int n,int key)
-{
-    for(int i=0;i<n;i++)
-    {
-        if(arr[i]==key)return 1;
-    }
-    return 0;
-}
-void movv(int arr[],int n)
+void movzeroes(int arr[],int n)
 {
     int *res=(int*)malloc(sizeof(int)*n);
     int j=0;
@@ -33,12 +25,14 @@ void movv(int arr[],int n)
 int main()
 {
     int n;
+    printf("enter size of array: ");
     scanf("%d",&n);
     int arr[n];
+    printf("element of array: ");
     for(int i=0;i<n;i++)
     {
         scanf("%d",&arr[i]);
     }
-    movv(arr,n);
+    movezeroes(arr,n);
     return 0;
 }

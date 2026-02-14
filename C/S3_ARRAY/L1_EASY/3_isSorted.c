@@ -1,3 +1,6 @@
+//problem statement
+/*Problem Statement: Given an array of size n, write a program to check if the given array is sorted in (ascending / Increasing / Non-decreasing) order or not. 
+If the array is sorted then return True, Else return False.*/
 #include<stdio.h>
 int isSorted(int arr[],int n)
 {
