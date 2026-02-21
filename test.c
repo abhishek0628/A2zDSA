@@ -1,70 +1,123 @@
 #include<stdio.h>
 #include<stdlib.h>
-void  swap(int *a,int *b){
-    int t=*a;
-    *a=*b;
-    *b=t;
+struct node{
+    int data;
+    struct node *next;
+};
+struct node *createnode(int data){
+    struct node *newnode=(struct node *)malloc(sizeof(struct node));
+    newnode->data=data;
+    newnode->next=NULL;
+    return newnode;
 }
-int fact(int n){
-    int fact=1;
-    for(int i=1;i<=n;i++){
-        fact*=i;
+struct node *insertbeg(struct node **head,int data){
+    struct node *newnode=createnode(data);
+    if(*head==NULL){
+        (*head)=newnode;
+        return *head;
     }
-    return fact;
+    newnode->next=(*head);
+    (*head)=newnode;
+    return *head;
 }
-// void permute(int arr[],int left,int right){
-//    if(left==right){
-//     for(int i=0;i<=right;i++){
-//         printf("%d ",arr[i]);
-//     }
-//     printf("\n");
-//    }
-//    for(int i=left;i<=right;i++){
-//     swap(&arr[left],&arr[i]);
-//     permute(arr,left+1,right);
-//     swap(&arr[left],&arr[i]);
-//    }
-// }
-void generate(int arr[],int left,int right,int *index,int **result){
-    if(left==right){
-        for(int i=0;i<=right;i++){
-            result[*index][i]=arr[i];
-        }
-        (*index)++;
-        return;
+int length(struct node *head){
+    if(head==NULL)return 0;
+    struct node *temp=head;
+    int count=0;
+    while(temp!=NULL){
+        count++;
+        temp=temp->next;
     }
-    for(int i=left;i<=right;i++){
-        swap(&arr[left],&arr[i]);
-        generate(arr,left+1,right,index,result);
-        swap(&arr[left],&arr[i]);
-    }
+    return count;
 }
-int **permute(int arr[],int n,int*returnsize){
-     *returnsize=fact(n);
-    int **result=(int**)malloc(sizeof(int*)*(*returnsize));
-    for(int i=0;i<*returnsize;i++){
-        result[i]=(int*)malloc(sizeof(int)*n);
+struct node *insertpos(struct node**head,int data,int pos){
+     if(pos<1)return *head;
+     struct node *newnode=createnode(data);
+     struct node *temp=*head;
+     if(pos==1){
+            newnode->next=*head;
+            *head=newnode;
+            return *head;
+     }
+     int i=1;
+     while(temp!=NULL && i<pos-1){
+        temp=temp->next;
+        i++;
+     }
+     if(temp==NULL)return *head;
+      newnode->next=temp->next;
+      temp->next=newnode;
+      return *head;
+}
+void insertlast(struct node *head,int data){
+    struct node *newnode=createnode(data);
+    struct node *temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
     }
-    int index=0;
-    generate(arr,0,n-1,&index,result);
-    return result;
+    temp->next=newnode;
+    
+}
+struct node *deletebeg(struct node **head){
+    if(*head==NULL)return *head;
+    *head=(*head)->next;
+    return *head;
+}
+void deletelast(struct node *head){
+    if(head==NULL)return ;
+    struct node *temp=head;
+    while(temp->next->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=NULL;
+}
+struct node *deletepos(struct node **head, int pos){
+
+    if(*head == NULL || pos < 1)
+        return *head;
+
+    struct node *temp = *head;
+
+    // Delete first node
+    if(pos == 1){
+        *head = temp->next;
+        free(temp);
+        return *head;
+    }
+
+    int i = 1;
+
+    while(temp != NULL && i < pos - 1){
+        temp = temp->next;
+        i++;
+    }
+
+    if(temp == NULL || temp->next == NULL)
+        return *head;
+
+    struct node *nodeToDelete = temp->next;
+
+    temp->next = nodeToDelete->next;
+    free(nodeToDelete);
+
+    return *head;
+}
+void display(struct node *head){
+    if(head==NULL)return ;
+    struct node *temp=head;
+    while(temp!=NULL){
+        printf("%d ",temp->data);
+        temp=temp->next;
+    }
 }
 int main(){
-    int n;
-    scanf("%d",&n);
-    int arr[n];
-    for(int i=0;i<n;i++){
-        scanf("%d",&arr[i]);
-    }
-    // permute(arr,0,n-1);
-    // return 0;
-    int returnsize=0;
-    int **result=permute(arr,n,&returnsize);
-    for(int i=0;i<returnsize;i++){
-        for(int j=0;j<n;j++){
-            printf("%d ",result[i][j]);
-        }
-        printf("\n");
-    }
-    return 0;
+    struct node *head=createnode(34);
+    head=insertbeg(&head,23);
+    insertlast(head,89);
+    head=insertpos(&head,78,4);
+    // printf("%d\n",length(head));
+    head=deletepos(&head,2);
+    // head=deletebeg(&head);
+
+    display(head);
 }
