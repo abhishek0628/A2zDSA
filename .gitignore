@@ -6,6 +6,9 @@ a.out
 *.out
 *.o
 *.exe
+test.*
+test
+tempCodeRunnerFile.py
 
 # Ignore build/output folders
 /bin/

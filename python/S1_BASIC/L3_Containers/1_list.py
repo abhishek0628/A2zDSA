@@ -13,7 +13,7 @@ def main():
     print(b[0])
     print(b[-1])
     print(b[1:3])
-    print(b[::-1])
+    print(b[::-1]) #[start:end:step]
 
     print("\n=== UPDATING ELEMENTS ===")
     b[0] = 10
