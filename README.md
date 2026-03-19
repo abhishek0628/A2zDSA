@@ -32,7 +32,7 @@ Each folder contains programs related to common DSA topics such as:
 
 ```bash
 git clone https://github.com/abhishek0628/A2ZDSA.git
-cd your-repository
+cd A2ZDSA
 ```
 
 ## 🚀 How to Use
