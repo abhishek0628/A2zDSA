@@ -1,0 +1,101 @@
+=========================
+🔹 CONFIGURATION
+=========================
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+git config --list
+
+=========================
+🔹 INITIALIZE / CLONE
+=========================
+git init
+git clone <repo-url>
+
+=========================
+🔹 STATUS & INFO
+=========================
+git status
+git log
+git log --oneline
+
+=========================
+🔹 ADD & COMMIT
+=========================
+git add <file>
+git add .
+git commit -m "message"
+
+=========================
+🔹 BRANCHING
+=========================
+git branch
+git branch <branch-name>
+git checkout <branch-name>
+git checkout -b <new-branch>
+git merge <branch-name>
+
+=========================
+🔹 REMOTE OPERATIONS
+=========================
+git remote -v
+git remote add origin <url>
+git remote remove origin
+
+=========================
+🔹 PUSH / PULL / FETCH
+=========================
+git push origin main
+git push -u origin main
+
+git pull origin main
+
+git fetch origin
+
+=========================
+🔹 DELETE FILES
+=========================
+git rm <file>
+git rm --cached <file>   # remove from repo only
+
+git commit -m "remove file"
+git push
+
+=========================
+🔹 RESET / UNDO
+=========================
+git reset --soft HEAD~1
+git reset --hard HEAD~1
+
+git checkout -- <file>
+
+=========================
+🔹 STASH
+=========================
+git stash
+git stash list
+git stash apply
+git stash pop
+
+=========================
+🔹 TAGS
+=========================
+git tag
+git tag v1.0
+git push origin v1.0
+
+=========================
+🔹 HISTORY CLEANING (ADVANCED)
+=========================
+git rebase -i HEAD~n
+
+git filter-branch --force ...
+
+=========================
+🔹 CLONING + UPDATE FLOW
+=========================
+git clone <repo>
+git pull
+git add .
+git commit -m "update"
+git push
