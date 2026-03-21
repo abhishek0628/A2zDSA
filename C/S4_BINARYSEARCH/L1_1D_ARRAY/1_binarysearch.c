@@ -13,6 +13,19 @@ int search(int arr[],int l,int r,int key)
     }
     return -1;
 }
+int binarysearch2(int arr[],int l,int r,int key){
+    if(l<r){
+        int mid=l+(r-l)/2;
+        if(arr[mid]==key){
+            return 1;
+        }
+        if(arr[mid]>key){
+            return binarysearch2(arr,l,mid,key);
+        }
+        else return binarysearch2(arr,mid+1,r,key);
+    }
+    return -1;
+}
 int main()
 {
     int n;
