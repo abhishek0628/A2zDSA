@@ -1,9 +1,10 @@
-#include<stdio.h>
+
+#include<iostream>
+using namespace std;
 int add(int a,int b){
     return a+b;
 }
 int main(){
-    int r=add(3,4);
-    printf("%d",r);
+    cout<<add(2,3);
     return 0;
 }
