@@ -25,8 +25,10 @@ void quicksort(int arr[],int l,int r){
 
 int main(){
     int n;
+    printf("Enter size of array: ");
     scanf("%d",&n);
     int arr[n];
+    printf("Enter element of array: ");
     for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }

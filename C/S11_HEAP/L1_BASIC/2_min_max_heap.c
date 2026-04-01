@@ -20,19 +20,19 @@ void maxheapify(int arr[],int n,int i){
 void minheapify(int arr[],int n,int i){
     int left=2*i+1;
     int right=2*i+2;
-    int largest=i;
-    if(left<=n&&arr[left]<arr[largest] ){
-        largest=left;
+    int smallest=i;
+    if(left<=n&&arr[left]<arr[smallest] ){
+        smallest=left;
 
     }
-    if(right<=n && arr[right]<arr[largest]){
-        largest=right;
+    if(right<=n && arr[right]<arr[smallest]){
+        smallest=right;
     }
-    if(i!=largest){
+    if(i!=smallest){
         int t=arr[i];
-        arr[i]=arr[largest];
-        arr[largest]=t;
-        minheapify(arr,n,largest);
+        arr[i]=arr[smallest];
+        arr[smallest]=t;
+        minheapify(arr,n,smallest);
     }
 }
 void heapsort(int arr[],int n){
