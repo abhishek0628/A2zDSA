@@ -11,12 +11,12 @@ int main(){
 
     // input
     scanf("%d",&a);
-    scanf("%d",&b);
-    scanf("%u",&c);
+    scanf("%u",&b);
+    scanf("%d",&c);
     
     //print
     printf("%d",a);
-    printf("%d",b);
-    printf("%u",c);
+    printf("%u",b);
+    printf("%d",c);
     return 0;
 }

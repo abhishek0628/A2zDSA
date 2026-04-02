@@ -1,3 +1,11 @@
+//Syntax
+/*
+return type funtionname(parameter1,parameter2,...){
+        //body
+        return value;
+}
+*/
+
 #include<stdio.h>
 int add(int a,int b){
     return a+b;
