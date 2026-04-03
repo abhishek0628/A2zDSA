@@ -33,6 +33,26 @@ void removed(int arr[],int n)
         printf("%d ",res[i]);
     }
 }
+int compare(const void *a, const void *b) {
+    return (*(int *)a - *(int *)b);
+}
+
+int removeDuplicates(int arr[], int n) {
+    if (n == 0) return 0;
+
+    qsort(arr, n, sizeof(int), compare);
+
+    int j = 0; // index for unique elements
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] != arr[j]) {
+            j++;
+            arr[j] = arr[i];
+        }
+    }
+
+    return j + 1; // new size
+}
 int main()
 {
     int n;

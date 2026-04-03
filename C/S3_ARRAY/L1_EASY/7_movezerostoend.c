@@ -1,26 +1,15 @@
 #include<stdio.h>
 #include<stdlib.h>
-void movzeroes(int arr[],int n)
-{
-    int *res=(int*)malloc(sizeof(int)*n);
+void movezeroes(int arr[],int n){
     int j=0;
-    for(int i=0;i<n;i++)
-    {
-        if(arr[i]!=0)
-        {
-            res[j++]=arr[i];
+    for(int i=0;i<n;i++){
+        if(arr[i]!=0){
+            arr[j++]=arr[i];
         }
-    
     }
-    for(int k=j+1;k<n;k++)
-    {
-        res[k]=0;
+    for(int i=j;i<n;i++){
+        arr[i]=0;
     }
-    for(int i=0;i<n;i++)
-    {
-        printf("%d ",res[i]);
-    }
-
 }
 int main()
 {
@@ -34,5 +23,8 @@ int main()
         scanf("%d",&arr[i]);
     }
     movezeroes(arr,n);
+    for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
     return 0;
 }
