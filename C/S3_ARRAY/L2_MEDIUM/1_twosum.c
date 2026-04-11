@@ -14,14 +14,7 @@ void twosum(int arr[],int n,int target)
     }
     printf("-1 -1");
 }
-// void twosum(int arr[],int n,int k){
-//     int left=0;
-//     int sum=0;
-//     for(int right=0;right<n;right++){
-//         sum+=arr[right];
-        
-//     }
-// }
+
 int main()
 {
     int n;

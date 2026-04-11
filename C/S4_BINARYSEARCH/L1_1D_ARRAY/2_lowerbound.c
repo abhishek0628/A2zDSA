@@ -1,3 +1,7 @@
+/*
+The lower bound algorithm finds the first or the smallest index in a sorted array where the value at that 
+index is greater than or equal to a given key i.e. x.
+*/
 #include<stdio.h>
 int max(int arr[],int n)
 {

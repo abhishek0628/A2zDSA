@@ -1,51 +1,36 @@
 #include<stdio.h>
-// int subarray(int arr[],int n,int k){
-//     int sum=0;
-//     int count=0;
-//     int max=0;
-//     for(int i=0;i<n;i++){
-//         sum+=arr[i];
-//         if(sum==k){
-//             if(count>max)max=count;
-
-//         }
-        
-//         else if(sum<0){
-//             count=0;
-//             sum=0;
-
-//         }
-//         count++;
-//     }
-//     return max;
-// }
-int subarray(int arr[],int n,int k){
-    int sum=0;
+#include<stdlib.h>
+int longest(int arr[],int n,int key){
     int len=0;
-    int maxlen=0;
+    int maxlen=-1;
+    int sum=0;
     int left=0;
+    int end=-1;
+    int start=0;
     for(int right=0;right<n;right++){
         sum+=arr[right];
-        while(right==n-1&&left<=right){
+        
+        while(sum>key &&left<right){
             sum-=arr[left];
+            
             left++;
         }
-        if(sum==k){
+        if(sum==key){
             len=right-left+1;
-            if(len>maxlen)maxlen=len;
+            if(len>maxlen){
+                maxlen=len;
+                start=left;
+                end=right;
+            }
         }
     }
+    printf("%d %d\n",start,end);
     return maxlen;
 }
 int main(){
-    int n;
-    scanf("%d",&n);
-    int arr[n];
-    for(int i=0;i<n;i++){
-        scanf("%d",&arr[i]);
-    }
-    int k;
-    scanf("%d",&k);
-    int m=subarray(arr,n,k);
+    int arr[]={10,5,2,7,1,9};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    // printf("\n");
+    printf("%d",longest(arr,n,15));
     return 0;
 }

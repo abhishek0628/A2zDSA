@@ -2,6 +2,9 @@
 /*Given an array nums consisting of only 0, 1, or 2. Sort the array in non-decreasing order. 
 The sorting must be done in-place, without making a copy of the original array.*/
 #include<stdio.h>
+int compare(const void *a,const void *b){
+    return(*(int*)a-*(int*)b);
+}
 void sort(int arr[],int n)
 {
     for(int i=1;i<n;i++)
@@ -26,7 +29,8 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
-    sort(arr,n);
+    // sort(arr,n);
+    qsort(arr,n,sizeof(int),compare);
     for(int i=0;i<n;i++)
     {
         printf("%d ",arr[i]);

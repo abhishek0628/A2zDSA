@@ -23,25 +23,19 @@ int upperbound(int arr[],int n,int target)
     }
     return low; 
 }
-int upperbound2(int arr[],int n,int target)
-{
-    int m=min(arr,n);
-    if(target<m)return -1;
+int upperbound2(int arr[],int n,int key){
+    int low=0;
+    int high=n-1;
     int ans=n;
-    
-   int low = 0, high = n;
-    while (low <high) {
-        int mid = low + (high - low) / 2;
-        if (arr[mid] <= target){
+    while(low<=high){
+        int mid=low+(high-low)/2;
+        if(arr[mid]>key){
             ans=mid;
-            low=mid+1;
-
+            high=mid-1;
         }
-            
-        else
-            high = mid -1; 
+        else low=mid+1;
     }
-    return ans; 
+    return ans;
 }
 
 int main()

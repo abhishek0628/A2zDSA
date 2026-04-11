@@ -1,3 +1,6 @@
+/*
+Lower bound would be insertpostion
+*/
 #include<stdio.h>
 int insertpos(int arr[],int n,int key)
 {
