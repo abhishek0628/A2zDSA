@@ -34,5 +34,5 @@ void insertlast(struct node *head,int data){
     newnode->prev=temp;
 }
 int main(){
-    struct node 8head=
+    struct node *head=NULL;
 }
