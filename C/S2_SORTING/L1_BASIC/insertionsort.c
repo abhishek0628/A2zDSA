@@ -16,8 +16,10 @@ void insertionsort(int arr[],int n)
 int main()
 {
     int n;
+    printf("enter size of array: ");
     scanf("%d",&n);
     int arr[n];
+    printf("enter element of array: ");
     for(int i=0;i<n;i++)
     {
         scanf("%d",&arr[i]);
