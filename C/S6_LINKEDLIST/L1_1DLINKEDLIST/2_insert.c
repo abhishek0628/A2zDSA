@@ -73,4 +73,5 @@ int main(){
     insertlast(head,29);
     head=insertpos(&head,78,7);
     display(head);
+    return 0;
 }
