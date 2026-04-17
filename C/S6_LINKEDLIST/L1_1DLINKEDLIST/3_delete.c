@@ -120,4 +120,5 @@ int main(){
     // head=deletebeg(&head);
 
     display(head);
+    return 0;
 }
