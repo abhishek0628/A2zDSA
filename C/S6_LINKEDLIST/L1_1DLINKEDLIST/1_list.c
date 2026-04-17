@@ -22,4 +22,5 @@ void display(struct node *head){
 int main(){
     struct node *head=createnode(34);
     display(head);
+    return 0;
 }
