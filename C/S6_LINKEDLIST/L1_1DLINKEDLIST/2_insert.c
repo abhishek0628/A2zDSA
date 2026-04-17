@@ -70,6 +70,7 @@ int main(){
     struct node *head=createnode(34);
     head=insertbeg(&head,23);
     insertlast(head,89);
+    insertlast(head,29);
     head=insertpos(&head,78,7);
     display(head);
 }
