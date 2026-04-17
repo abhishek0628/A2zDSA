@@ -12,7 +12,7 @@ struct node *createnode(int data){
     newnode->next=NULL;
     return newnode;
 }
-void insertbeg(struct node **head,int data){
+void insertbeg(struct node **head,int data){ //here head is modified so using pointer
     struct node *newnode=createnode(data);
     if(*head==NULL){
         *head=newnode;
@@ -35,4 +35,8 @@ void insertlast(struct node *head,int data){
 }
 int main(){
     struct node *head=NULL;
+    insertbeg(&head,89);
+    insertlast(head,76);
+    display(head);
+    return 0;
 }

@@ -82,4 +82,5 @@ int main(){
     printf("%d\n",length(head));
 
     display(head);
+    return 0;
 }
