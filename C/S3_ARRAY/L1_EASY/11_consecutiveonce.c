@@ -1,48 +1,24 @@
-#include<stdio.h>
-// int maxx(int arr[],int n)
-// {
-//     int max=0;
-//     int count=0;
+/*
+Problem: Find maximum number of consecutive 1s in a binary array
 
-//     int j=1;
-//     for(int i=0;i<n;i++)
-//     {
-        
-//         if(arr[i]==1 &&i!=n-1)
-//         {
-//             count++;
-//             if(arr[j]==0)
-//             {
-//                 if(count>max)
-//                 {
-//                     max=count;
-//                     count=0;
-//                 }
-//             }
-//         }
-//         else if(arr[i]==1 &&i==n-1)
-//         {
-//             count++;
-//             if(max<count)max=count;
-//         }
-//         j++;
-       
-//     }
-//     return max;
-// }
-int max(int arr[],int n){
-    int count=0;
-    int max=0;
-    for(int i=0;i<n;i++){
-        if(arr[i]==1){
-            count++;
-            if(count>max)max=count;
-            
-        }
-        else count=0;
-    }
-    return max;
-}
+Algorithm:
+1. Initialize count = 0 (current streak of 1s)
+2. Initialize max = 0 (maximum streak found)
+3. Traverse the array from i = 0 to n-1:
+      a. If arr[i] == 1:
+            - Increment count
+            - Update max if count > max
+      b. Else:
+            - Reset count to 0
+4. Return max
+
+Time Complexity:
+O(n)   // single traversal of array
+
+Space Complexity:
+O(1)   // constant extra space used
+*/
+#include<stdio.h>
 int main()
 {
     int n;

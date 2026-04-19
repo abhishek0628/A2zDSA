@@ -1,3 +1,25 @@
+/*
+Quick Sort
+
+Algorithm:
+Select a pivot element.
+Partition the array such that:
+- Elements smaller than pivot go to the left
+- Elements greater than pivot go to the right
+Recursively apply the same process to left and right subarrays.
+
+Time Complexity:
+Worst Case: O(n^2)     // when pivot is always smallest/largest (bad choice)
+Average Case: O(n log n)
+Best Case: O(n log n)
+
+Space Complexity:
+O(log n)   // due to recursion stack (in-place apart from this)
+
+Properties:
+- In-place sorting (with small recursion stack)
+- Not stable
+*/
 #include<stdio.h>
 int partition(int arr[],int l,int r){
     int pivot=arr[r];

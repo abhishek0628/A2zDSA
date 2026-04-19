@@ -1,47 +1,28 @@
-//problem statement
-/*Given an integer array sorted in non-decreasing order, remove the duplicates in place such that each unique element appears only once. 
-The relative order of the elements should be kept the same.
+/*
+Problem: Remove duplicates from a sorted array (in-place)
 
-If there are k elements after removing the duplicates, then the first k elements of the array should hold the final result. 
-It does not matter what you leave beyond the first k elements.*/
+Algorithm:
+1. Start
+2. If array is empty, return 0
+3. Use a pointer i = 0 (slow pointer for unique elements)
+4. Traverse array with j from 1 to n-1
+5. If arr[j] != arr[i]:
+        i++
+        arr[i] = arr[j]
+6. Return i + 1 as the number of unique elements (k)
+7. End
+
+Time Complexity:
+O(n)   // single traversal of array
+
+Space Complexity:
+O(1)   // in-place, no extra array used
+*/
 #include<stdio.h>
 #include<stdlib.h>
 
-int search(int arr[],int n,int key)
-{
-    for(int i=0;i<n;i++)
-    {
-        if(arr[i]==key)return 1;
-    }
-    return 0;
-
-}
-
-void removed(int arr[],int n)
-{
-    int j=0;
-    int *res=(int*)malloc(sizeof(int)*n);
-    for(int i=0;i<n;i++)
-    {
-        if(search(res,j,arr[i])==0)
-        {
-            res[j++]=arr[i];
-        }
-    }
-    for(int i=0;i<j;i++)
-    {
-        printf("%d ",res[i]);
-    }
-}
-int compare(const void *a, const void *b) {
-    return (*(int *)a - *(int *)b);
-}
-
 int removeDuplicates(int arr[], int n) {
     if (n == 0) return 0;
-
-    qsort(arr, n, sizeof(int), compare);
-
     int j = 0; // index for unique elements
 
     for (int i = 1; i < n; i++) {

@@ -1,7 +1,38 @@
-//problem statement
 /*
-Problem Statement: Given an array, find the second smallest and second largest element in the array. 
-Print ‘-1’ in the event that either of them doesn’t exist.
+Problem: Find second smallest and second largest element in an array
+
+Algorithm:
+1. Start
+2. If array size < 2, print -1 for both and return
+3. Initialize:
+      smallest = INT_MAX
+      secondSmallest = INT_MAX
+      largest = INT_MIN
+      secondLargest = INT_MIN
+4. Traverse the array:
+      For each element x:
+          if x < smallest:
+                secondSmallest = smallest
+                smallest = x
+          else if x > smallest and x < secondSmallest:
+                secondSmallest = x
+
+          if x > largest:
+                secondLargest = largest
+                largest = x
+          else if x < largest and x > secondLargest:
+                secondLargest = x
+
+5. If secondSmallest is still INT_MAX → set it to -1
+6. If secondLargest is still INT_MIN → set it to -1
+7. Print both values
+8. End
+
+Time Complexity:
+O(n)   // single traversal
+
+Space Complexity:
+O(1)   // constant extra variables only
 */
 #include<stdio.h>
 #include<limits.h>

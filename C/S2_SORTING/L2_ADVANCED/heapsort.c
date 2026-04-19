@@ -1,3 +1,26 @@
+/*
+Heap Sort
+
+Algorithm:
+1. Build a max heap from the array.
+2. The maximum element will be at index 0.
+3. Swap arr[0] with the last element.
+4. Reduce heap size by 1 (ignore the last sorted element).
+5. Heapify the root again.
+6. Repeat until the array is sorted.
+
+Time Complexity:
+Worst Case: O(n log n)
+Average Case: O(n log n)
+Best Case: O(n log n)   // no special best case like bubble sort
+
+Space Complexity:
+O(1)   // in-place (no extra memory)
+
+Properties:
+- In-place sorting
+- Not stable
+*/
 #include<stdio.h>
 void swap(int *a,int *b){
     int t=*a;

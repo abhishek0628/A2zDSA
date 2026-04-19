@@ -1,6 +1,27 @@
-//problem statement
-/*Given an integer array of size n containing distinct values in the range from 0 to n (inclusive), 
-return the only number missing from the array within this range.*/
+/*
+Problem: Find the missing number in an array containing numbers from 1 to n
+
+Algorithm:
+1. Read array of size n (assumes numbers are from 1 to n with one missing)
+2. Compute expected sum of first n natural numbers using formula:
+       sum1 = n*(n+1)/2
+3. Compute actual sum of array elements:
+       sum2 = sum of all elements in array
+4. Missing number = sum1 - sum2
+5. Return missing number
+
+Time Complexity:
+O(n)
+- One traversal of array
+
+Space Complexity:
+O(1)
+- Only variables used, no extra data structures
+
+Note:
+- Assumes exactly one number is missing
+- Works only when array contains numbers in range [1, n]
+*/
 #include<stdio.h>
 
 int missing(int arr[],int n){

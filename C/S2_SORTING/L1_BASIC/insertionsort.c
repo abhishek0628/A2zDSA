@@ -1,3 +1,22 @@
+/*
+Insertion Sort
+
+Algorithm:
+Pick each element and insert it into its correct position in the already sorted part.
+Assume the first element is already sorted.
+
+Time Complexity:
+Worst Case: O(n^2)
+Average Case: O(n^2)
+Best Case: O(n)   // when the array is already sorted
+
+Space Complexity:
+O(1)   // in-place, no extra space used
+
+Properties:
+- In-place sorting
+- Stable sorting
+*/
 #include<stdio.h>
 void insertionsort(int arr[],int n)
 {
@@ -5,7 +24,7 @@ void insertionsort(int arr[],int n)
     {
         int key=arr[i];
         int j=i-1;
-        while(j>=0 &&key<arr[j])
+        while(j>=0 &&key<arr[j])//if array is already sorted ,this loop will never execute and best case happens
         {
             arr[j+1]=arr[j];
             j--;

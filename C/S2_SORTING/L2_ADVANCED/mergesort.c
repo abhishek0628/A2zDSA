@@ -1,3 +1,22 @@
+/*
+Merge Sort
+
+Algorithm:
+Divide the array into two halves, recursively sort each half,
+and then merge the sorted halves.
+
+Time Complexity:
+Worst Case: O(n log n)
+Average Case: O(n log n)
+Best Case: O(n log n)
+
+Space Complexity:
+O(n)   // extra space for merging
+
+Properties:
+- Not in-place        // requires extra memory
+- Stable sorting      // maintains relative order of equal elements
+*/
 #include<stdio.h>
 void merge(int arr[],int l,int m,int r)
 {

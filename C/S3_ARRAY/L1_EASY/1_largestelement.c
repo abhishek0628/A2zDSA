@@ -1,6 +1,21 @@
-//problem statement
 /*
-Problem Statement: Given an array, we have to find the largest element in the array.
+Problem: Find the largest element in an array
+
+Algorithm:
+1. Start
+2. Initialize max = arr[0]
+3. Traverse the array from index 1 to n-1
+4. For each element:
+      if arr[i] > max
+            max = arr[i]
+5. Return max
+6. End
+
+Time Complexity:
+O(n)   // we check each element once
+
+Space Complexity:
+O(1)   // no extra space used
 */
 #include<stdio.h>
 int max(int arr[],int n)
