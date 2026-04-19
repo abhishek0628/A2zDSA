@@ -1,8 +1,32 @@
-// }//problem statement
-/*Problem Statement: Given an integer array nums of size n, return the majority element of the array.
+/*
+Problem: Find Majority Element(s) in an array
 
-The majority element of an array is an element that appears more than n/2 times in the array. 
-The array is guaranteed to have a majority element.*/
+Definition:
+An element is a majority element if it appears more than n/2 times.
+
+Algorithm:
+1. Find the maximum element in the array (m)
+2. Create a hash array of size (m + 1) and initialize all values to 0
+3. Traverse the input array:
+      - Increment hash[arr[i]] for each element
+4. Traverse the hash array:
+      - If hash[i] > n/2, then i is a majority element
+5. Store and print all such elements
+
+Time Complexity:
+O(n + m)
+- O(n) for counting frequencies
+- O(m) for scanning hash array
+
+Space Complexity:
+O(m)
+- Extra hash array of size (max element value)
+
+Note:
+- Works only for non-negative integers
+- Not efficient for large max values or sparse arrays
+- Not suitable when values are negative
+*/
 #include<stdio.h>
 #include<limits.h>
 int max(int arr[],int n){

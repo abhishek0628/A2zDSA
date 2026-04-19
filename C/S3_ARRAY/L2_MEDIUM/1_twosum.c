@@ -1,3 +1,27 @@
+/*
+Problem: Two Sum (Find indices of two numbers such that their sum equals target)
+
+Algorithm:
+1. Take array arr of size n and target value
+2. Traverse array using first loop (i = 0 to n-1)
+3. For each i, traverse remaining elements using second loop (j = i+1 to n-1)
+4. Check if arr[i] + arr[j] == target:
+      - If yes, print indices i and j
+      - Return immediately (pair found)
+5. If no such pair exists, print -1 -1
+
+Time Complexity:
+O(n^2)
+- Two nested loops over array elements
+
+Space Complexity:
+O(1)
+- No extra space used
+
+Note:
+- Brute force approach
+- Stops after finding first valid pair
+*/
 #include<stdio.h>
 void twosum(int arr[],int n,int target)
 {
