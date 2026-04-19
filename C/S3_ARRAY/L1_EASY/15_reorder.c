@@ -1,3 +1,27 @@
+/*
+Problem: Reorder array so that even numbers come before odd numbers
+
+Algorithm:
+1. Traverse the array using bubble sort style nested loops
+2. For each adjacent pair arr[j] and arr[j+1]:
+      a. If arr[j] is odd and arr[j+1] is even:
+            - Swap them
+3. Repeat until no more swaps are needed
+4. Result: all even elements appear before odd elements
+   (relative order within groups is not guaranteed to be preserved in general bubble-style swaps)
+
+Time Complexity:
+O(n^2)
+- Due to nested loops (bubble sort style passes)
+
+Space Complexity:
+O(1)
+- In-place swapping, no extra array used
+
+Note:
+- In-place algorithm
+- Not stable for general grouping (relative order may change within even/odd groups)
+*/
 #include<stdio.h>
 #include<stdlib.h>
 void reorder(int arr[],int n){
