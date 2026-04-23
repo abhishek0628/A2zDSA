@@ -34,7 +34,7 @@ struct node *insertbst(struct node *root,int data)
     // else
     return root;
 }
-int max(struct node *root)
+int maxValue(struct node *root)
 {
     if(root==NULL)return -1;
     while(root &&root->right)
@@ -43,7 +43,7 @@ int max(struct node *root)
     }
     return root->data;
 }
-int min(struct node *root)
+int minValue(struct node *root)
 {
     if(root==NULL)return -1;
     while(root&& root->left)
@@ -80,7 +80,7 @@ int main()
     root=insertbst(root,8);
     root=insertbst(root,890);
     preorder(root);
-    printf("\n%d %d",max(root),min(root));
+    printf("\n%d %d",maxValue(root),minValue(root));
     printf("\n");
     preorder(root);
     printf("\n%d",search(root,890));
