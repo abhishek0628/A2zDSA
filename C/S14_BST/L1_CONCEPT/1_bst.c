@@ -15,6 +15,7 @@ struct node *createnode(int data)
     newnode->right=NULL;
     return newnode;
 }
+//insert
 struct node *insertbst(struct node *root,int data)
 {
     if(root==NULL)
