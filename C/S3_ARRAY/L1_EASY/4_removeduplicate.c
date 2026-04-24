@@ -43,7 +43,10 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
-    removed(arr,n);
+    int newsize=removed(arr,n);
+    for(int i=0;i<newsize;i++){
+        printf("%d ",arr[i]);
+    }
     return 0;
     
 }
