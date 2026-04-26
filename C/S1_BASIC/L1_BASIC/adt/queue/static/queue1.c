@@ -1,3 +1,4 @@
+//using array
 #include<stdio.h>
 #define size 2
 int rear=0;
