@@ -6,9 +6,14 @@ struct node{
     struct node *next;
 };
 struct stack{
-    struct node *head;
+    struct node *top;
 
 };
+struct stack *createstack(){
+    struct stack *s=(struct stack*)malloc(sizeof(struct stack));
+    s->top=NULL;
+    return s;
+}
 int main(){
-    
+
 }

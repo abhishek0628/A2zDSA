@@ -16,7 +16,13 @@ struct queue{
     struct node *front;
 
 };
-struct 
+struct queue *createQue(){
+    struct queue *q=(struct queue*)malloc(sizeof(struct queue));
+    q->rear=NULL;
+    q->front=NULL;
+    return q;
+}
 int main(){
+    return 0;
     
 }
