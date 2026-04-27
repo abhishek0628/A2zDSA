@@ -5,11 +5,18 @@ struct node{
     int data;
     struct node *next;
 };
+struct node *createnode(int data){
+    struct node *newnode=(struct node*)malloc(sizeof(struct node));
+    newnode->data=data;
+    newnode->next=NULL;
+    return newnode;
+}
 struct queue{
     struct node *rear;
     struct node *front;
 
 };
+struct 
 int main(){
     
 }
