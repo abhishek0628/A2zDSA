@@ -22,6 +22,12 @@ struct queue *createQue(){
     q->front=NULL;
     return q;
 }
+void enque(struct queue*q,int data){
+
+}
+void dequeu(struct queue*q){
+    
+}
 int main(){
     return 0;
     
