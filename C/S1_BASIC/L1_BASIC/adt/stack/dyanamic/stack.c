@@ -14,6 +14,12 @@ struct stack *createstack(){
     s->top=NULL;
     return s;
 }
+void push(struct stack *s,int data){
+
+}
+void empty(struct stack *s){
+    
+}
 int main(){
 
 }
