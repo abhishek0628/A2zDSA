@@ -18,8 +18,9 @@ void push(struct stack *s,int data){
 
 }
 void empty(struct stack *s){
-    
+
 }
 int main(){
+    struct stack *s=createstack();
 
 }
