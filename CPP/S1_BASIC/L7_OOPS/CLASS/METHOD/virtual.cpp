@@ -2,6 +2,7 @@
 using namespace std;
 class base{
     public:
+    //virtual method can be used for polymorphism
     virtual void show(){
         cout<<"this is the base class"<<endl;
     }

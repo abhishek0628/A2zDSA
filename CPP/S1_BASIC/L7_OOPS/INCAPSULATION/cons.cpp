@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 class Rectangle{
+    //default is private
     int length;
     int breadth;
     public:

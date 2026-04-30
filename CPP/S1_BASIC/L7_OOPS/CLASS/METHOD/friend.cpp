@@ -12,7 +12,7 @@ class Rectangle{
     friend int calculatearea(Rectangle r);
 };
 class A {
-    friend class B;
+    friend class B;//now this class can access private data of class A
 private:
     int x;
 };
@@ -24,7 +24,7 @@ public:
     }
 };
 int calculatearea(Rectangle r){
-    return r.length * r.breadth;
+    return r.length * r.breadth;//here using private data of class Rectangle
 }
 int main(){
     Rectangle r(10,20);

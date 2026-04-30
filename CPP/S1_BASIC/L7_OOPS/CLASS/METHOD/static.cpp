@@ -3,6 +3,7 @@ using namespace std;
 class counter{
     private:
     static int count;
+   // static int x=0; can not initialize
     public:
     counter(){
         count++;
@@ -11,7 +12,7 @@ class counter{
         return count;
     }
 };
-int counter:: count=0;
+int counter:: count=0;//initialize;
 int main()
 {
     counter c1;
