@@ -17,7 +17,9 @@ int reverse(int num)
 int main()
 {
     int num;
+    printf("enter num: ");
     scanf("%d",&num);
+    printf("reversed element: ");
     printf("%d",reverse(num));
     return 0;
 }
