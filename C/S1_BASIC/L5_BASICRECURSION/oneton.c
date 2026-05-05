@@ -8,6 +8,7 @@ void print(int n)
 int main()
 {
     int n;
+     scanf("%d",&n);
     scanf("%d",&n);
     print(n);
     return 0;
