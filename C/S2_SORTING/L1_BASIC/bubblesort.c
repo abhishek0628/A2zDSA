@@ -33,8 +33,9 @@ void bubblesort(int arr[],int n)
                 arr[j]=t;
                 swapped=1;
             }
-            if(swapped==0)break;//means array is already sorted so need to check again
+            // if(swapped==0)break;//means array is already sorted so need to check again
         }
+        if(swapped==0)break;
     }
 }
 int main()
